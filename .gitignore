@@ -1,0 +1,17 @@
+*.pdf
+*.docx
+No_git/
+*.pptx
+*.fla
+*.swf
+*.ase
+*.kra~
+*.kra
+.vs/
+*.sln
+x64/
+*.vcxproj
+*.filters
+*.user
+*.drawio
+*.bat
