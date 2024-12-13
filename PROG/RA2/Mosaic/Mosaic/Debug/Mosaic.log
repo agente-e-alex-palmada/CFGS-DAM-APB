@@ -1,0 +1,12 @@
+﻿  Mosaic.cpp
+E:\AluCiclesGS1\APB\PROG\RA2\Mosaic\Mosaic\Mosaic.cpp(8,38): warning C4244: 'argumento': conversión de 'T' a 'unsigned int'; posible pérdida de datos
+E:\AluCiclesGS1\APB\PROG\RA2\Mosaic\Mosaic\Mosaic.cpp(8,38): warning C4244:         with
+E:\AluCiclesGS1\APB\PROG\RA2\Mosaic\Mosaic\Mosaic.cpp(8,38): warning C4244:         [
+E:\AluCiclesGS1\APB\PROG\RA2\Mosaic\Mosaic\Mosaic.cpp(8,38): warning C4244:             T=float
+E:\AluCiclesGS1\APB\PROG\RA2\Mosaic\Mosaic\Mosaic.cpp(8,38): warning C4244:         ]
+E:\AluCiclesGS1\APB\PROG\RA2\Mosaic\Mosaic\Mosaic.cpp(8,26): warning C4244: 'argumento': conversión de 'T' a 'unsigned int'; posible pérdida de datos
+E:\AluCiclesGS1\APB\PROG\RA2\Mosaic\Mosaic\Mosaic.cpp(8,26): warning C4244:         with
+E:\AluCiclesGS1\APB\PROG\RA2\Mosaic\Mosaic\Mosaic.cpp(8,26): warning C4244:         [
+E:\AluCiclesGS1\APB\PROG\RA2\Mosaic\Mosaic\Mosaic.cpp(8,26): warning C4244:             T=float
+E:\AluCiclesGS1\APB\PROG\RA2\Mosaic\Mosaic\Mosaic.cpp(8,26): warning C4244:         ]
+  Mosaic.vcxproj -> E:\AluCiclesGS1\APB\PROG\RA2\Mosaic\Debug\Mosaic.exe

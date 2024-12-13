@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <player>
+        <name>SirDragonX</name>
+        <level>12</level>
+        <trophies>4000</trophies>
+        <gold>2500</gold>
+        <gems>75</gems>
+        <stars>230</stars>
+        <last_three_matches>
+            <match>
+                <date>2024-11-05</date>
+                <result>2-3</result>
+                <duration>3:25</duration>
+                <type>2v2 Battle</type>
+            </match>
+            <match>
+                <date>2024-11-04</date>
+                <result>0-3</result>
+                <duration>2:58</duration>
+                <type>Clan War</type>
+            </match>
+            <match>
+                <date>2024-11-03</date>
+                <result>1-2</result>
+                <duration>4:12</duration>
+                <type>1v1 Ranked</type>
+            </match>
+        </last_three_matches>
+    </player>
+    <player>
+        <name>ShadowKing</name>
+        <level>11</level>
+        <trophies>3200</trophies>
+        <gold>1800</gold>
+        <gems>60</gems>
+        <stars>145</stars>
+        <last_three_matches>
+            <match>
+                <date>2024-11-06</date>
+                <result>3-1</result>
+                <duration>4:05</duration>
+                <type>1v1 Ranked</type>
+            </match>
+            <match>
+                <date>2024-11-04</date>
+                <result>2-2</result>
+                <duration>3:45</duration>
+                <type>Clan War</type>
+            </match>
+            <match>
+                <date>2024-11-02</date>
+                <result>1-3</result>
+                <duration>5:00</duration>
+                <type>2v2 Battle</type>
+            </match>
+        </last_three_matches>
+    </player>
+    <player>
+        <name>EliteTitan</name>
+        <level>13</level>
+        <trophies>4500</trophies>
+        <gold>3100</gold>
+        <gems>90</gems>
+        <stars>285</stars>
+        <last_three_matches>
+            <match>
+                <date>2024-11-07</date>
+                <result>3-2</result>
+                <duration>4:30</duration>
+                <type>1v1 Ranked</type>
+            </match>
+            <match>
+                <date>2024-11-05</date>
+                <result>1-0</result>
+                <duration>3:20</duration>
+                <type>Clan War</type>
+            </match>
+            <match>
+                <date>2024-11-03</date>
+                <result>2-1</result>
+                <duration>2:55</duration>
+                <type>2v2 Battle</type>
+            </match>
+        </last_three_matches>
+    </player>
+</root>
