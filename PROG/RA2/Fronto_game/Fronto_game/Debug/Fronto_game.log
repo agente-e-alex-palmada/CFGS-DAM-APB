@@ -1,6 +1,0 @@
-﻿  Fronto_game.cpp
-E:\AluCiclesGS1\APB\PROG\RA2\Fronto_game\Fronto_game\Fronto_game.cpp(62,6): warning C4101: 'score': variable local sin referencia
-E:\AluCiclesGS1\APB\PROG\RA2\Fronto_game\Fronto_game\Fronto_game.cpp(68,8): warning C4101: 'event': variable local sin referencia
-E:\AluCiclesGS1\APB\PROG\RA2\Fronto_game\Fronto_game\Fronto_game.cpp(63,18): warning C4101: 'bar_speed': variable local sin referencia
-E:\AluCiclesGS1\APB\PROG\RA2\Fronto_game\Fronto_game\Fronto_game.cpp(63,8): warning C4101: 'barSpeed': variable local sin referencia
-  Fronto_game.vcxproj -> E:\AluCiclesGS1\APB\PROG\RA2\Fronto_game\Debug\Fronto_game.exe
