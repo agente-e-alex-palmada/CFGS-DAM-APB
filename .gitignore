@@ -17,3 +17,8 @@ x64/
 *.bat
 *.zip
 *.7z
+/ACCD/RA3/Create-Edit-Delete_data/nbproject/private/
+/ACCD/RA3/APB-RA3-P1/nbproject/private/
+/ACCD/RA3/APB_RA3_P1/nbproject/private/
+/ACCD/RA3/APB_RA3_P1/build/
+/ACCD/RA3/APB_RA3_P1/dist/
