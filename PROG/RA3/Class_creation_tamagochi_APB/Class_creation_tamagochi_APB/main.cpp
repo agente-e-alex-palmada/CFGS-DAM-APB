@@ -1,31 +1,41 @@
 #include "myheader.h"
+#include "Critter.h"
 
 void main(){
-	int selection;
+	int selection, hunger = 100, boredom = 0;
 	bool programRunning = true;
+	string name;
+	auto now = chrono::system_clock::now();
+	time_t actualTime = std::chrono::system_clock::to_time_t(now);
+	std::cout << "What name you want to put to your new Critter?\n\nWrite: ";
+	getline(cin, name);
+	system("cls");
+	Critter myCritter(hunger, boredom, name, actualTime);
 	while (programRunning)
 	{
 		menu();
 		cin >> selection;
+		system("cls");
+		if (cin.fail() || selection < 0 || selection > 4)
+		{
+			programRunning = true;
+		}
 		switch (selection)
 		{
 		case 0:
-			
+
 			programRunning = false;
 			break;
 		case 1:
-
-			system("cls");
+			myCritter.talk(hunger, boredom, actualTime);
 			programRunning = true;
 			break;
 		case 2:
-
-			system("cls");
+			myCritter.eat(hunger, actualTime);
 			programRunning = true;
 			break;
 		case 3:
-
-			system("cls");
+			myCritter.play(hunger, actualTime);
 			programRunning = true;
 			break;
 		default:
@@ -35,5 +45,5 @@ void main(){
 		}
 	}
 	system("cls");
-	cout << "Goodbye\n";
+	std::cout << "Goodbye\n";
 }
