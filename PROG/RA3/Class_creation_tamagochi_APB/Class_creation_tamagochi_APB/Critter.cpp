@@ -19,15 +19,20 @@ int Critter::getBoredom() const
     return m_Boredom;
 }
 
+time_t Critter::getTime() const
+{
+    return m_Time;
+}
+
 int Critter::setHunger(int hunger)
 {
     if (m_Hunger + hunger < 0)
     {
-        return 0;
+        return m_Hunger = 0;
     }
     else if (m_Hunger + hunger > 100)
     {
-        return 100;
+        return m_Hunger = 100;
     }
     else
     {
@@ -37,13 +42,13 @@ int Critter::setHunger(int hunger)
 
 int Critter::setBoredom(int boredom)
 {
-    if (m_Boredom - boredom < 0)
+    if (m_Boredom + boredom < 0)
     {
-        return 0;
+        return m_Boredom = 0;
     }
-    else if (m_Boredom - boredom  > 100)
+    else if (m_Boredom + boredom  > 100)
     {
-        return 100;
+        return m_Boredom = 100;
     }
     else
     {
@@ -51,11 +56,16 @@ int Critter::setBoredom(int boredom)
     }
 }
 
-void Critter::talk(int hunger, int boredom, time_t& timePassed)
+time_t Critter::setTime(time_t timePassed)
 {
+    return m_Time = timePassed;
+}
+
+void Critter::talk()
+{
+    int boredom = getBoredom(), hunger = getHunger();
     string actualBoredom;
     string actualHunger;
-    time_t currentTime = timePassed;
     if (boredom >= 75)
     {
         actualBoredom = "frustrated";
@@ -88,41 +98,51 @@ void Critter::talk(int hunger, int boredom, time_t& timePassed)
     {
         actualHunger = "starving";
     }
-
+    auto now = std::chrono::system_clock::now();
+    time_t currentTime = std::chrono::system_clock::to_time_t(now);
     passTime(currentTime);
     cout << "I'm a Critter and I feel " << actualBoredom << ".\nAlso, I'm " << actualHunger << endl;
 }
 
-int Critter::eat(int hunger, time_t& timePassed)
+int Critter::eat()
 {
     int hungerToSum = 5;
-    int actualHunger = setHunger(hungerToSum);
-    time_t currentTime = timePassed;
+    setHunger(hungerToSum);
+    int actualHunger = getHunger();
+    auto now = std::chrono::system_clock::now();
+    time_t currentTime = std::chrono::system_clock::to_time_t(now);
     passTime(currentTime);
-    return actualHunger;
+     return actualHunger;
 }
 
-int Critter::play(int boredom, time_t& timePassed)
+int Critter::play()
 {
-    int boredomToSub = 5;
-    int actualBoredom = setBoredom(boredomToSub);
-    time_t currentTime = timePassed;
+    int boredomToSum = 5;
+    setBoredom(boredomToSum);
+    int actualBoredom = getBoredom();
+    auto now = std::chrono::system_clock::now();
+    time_t currentTime = std::chrono::system_clock::to_time_t(now);
     passTime(currentTime);
     return actualBoredom;
 }
 
-void Critter::passTime(time_t& obtainedTime)
+void Critter::passTime(time_t lastUpdateTime)
 {
-    int hungerToSub = 0, boredomToSum = 0;
-    auto now = chrono::system_clock::now();
-    time_t currentTime = chrono::system_clock::to_time_t(now);
+    int rest = 0;
+    time_t currentTime = getTime();
+    time_t timeDifference = lastUpdateTime - currentTime;
+    cout <<"Temps previ:" << timeDifference << endl;
     while (timeDifference >= 3)
     {
+        rest--;
         timeDifference -= 3;
-        hungerToSub--;
-        boredomToSum++;
     }
-    setHunger(hungerToSub);
-    setBoredom(boredomToSum);
-    cout << getBoredom() << endl << endl << getHunger() << endl << endl;
+    cout << "Temps post: " << timeDifference<<endl;
+    if (rest < 0)
+    {
+        setBoredom(rest);
+        setHunger(rest);
+        setTime(lastUpdateTime);
+    }
+    cout << endl <<m_Boredom << endl << m_Hunger << endl << endl;
 }
