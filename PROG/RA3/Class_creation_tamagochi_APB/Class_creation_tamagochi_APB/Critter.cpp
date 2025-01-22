@@ -1,11 +1,12 @@
 #include "myheader.h"
 #include "Critter.h"
 
-Critter::Critter(int hunger, int boredom, string& name, time_t& timePassed)
+Critter::Critter(int hunger, int boredom, string name, time_t timePassed)
 {
     m_Hunger = hunger;
     m_Boredom = boredom;
     m_Time = timePassed;
+    m_Name = name;
     cout << "Hello, I'm " << name << ". I've just born.\nNice to meet you.\n\n";
 }
 
@@ -24,41 +25,41 @@ time_t Critter::getTime() const
     return m_Time;
 }
 
-int Critter::setHunger(int hunger)
+void Critter::setHunger(int hunger)
 {
     if (m_Hunger + hunger < 0)
     {
-        return m_Hunger = 0;
+        m_Hunger = 0;
     }
     else if (m_Hunger + hunger > 100)
     {
-        return m_Hunger = 100;
+        m_Hunger = 100;
     }
     else
     {
-        return m_Hunger += hunger;
+        m_Hunger += hunger;
     }
 }
 
-int Critter::setBoredom(int boredom)
+void Critter::setBoredom(int boredom)
 {
     if (m_Boredom + boredom < 0)
     {
-        return m_Boredom = 0;
+        m_Boredom = 0;
     }
     else if (m_Boredom + boredom  > 100)
     {
-        return m_Boredom = 100;
+        m_Boredom = 100;
     }
     else
     {
-        return m_Boredom += boredom;
+        m_Boredom += boredom;
     }
 }
 
-time_t Critter::setTime(time_t timePassed)
+void Critter::setTime(time_t timePassed)
 {
-    return m_Time = timePassed;
+    m_Time = timePassed;
 }
 
 void Critter::talk()
@@ -68,19 +69,19 @@ void Critter::talk()
     string actualHunger;
     if (boredom >= 75)
     {
-        actualBoredom = "frustrated";
+        actualBoredom = "entertained";
     }
     else if (boredom >= 50)
     {
-        actualBoredom = "mad";
+        actualBoredom = "bored";
     }
     else if (boredom >= 25)
     {
-        actualBoredom = "bored";
+        actualBoredom = "mad";
     }
     else
     {
-        actualBoredom = "entertained";
+        actualBoredom = "frustrated";
     }
     if (hunger >= 75)
     {
@@ -98,32 +99,34 @@ void Critter::talk()
     {
         actualHunger = "starving";
     }
-    auto now = std::chrono::system_clock::now();
+    auto now = chrono::system_clock::now();
     time_t currentTime = std::chrono::system_clock::to_time_t(now);
     passTime(currentTime);
     cout << "I'm a Critter and I feel " << actualBoredom << ".\nAlso, I'm " << actualHunger << endl;
 }
 
-int Critter::eat()
+void Critter::secretTalk() {
+    cout << "Stats:\nHunger: " << m_Hunger << "\nBoredom: " << m_Boredom << endl << endl;
+}
+
+void Critter::eat()
 {
     int hungerToSum = 5;
     setHunger(hungerToSum);
-    int actualHunger = getHunger();
-    auto now = std::chrono::system_clock::now();
+    cout << m_Name << ": Om nom nom nom nom nom\n*Your critter gets " << hungerToSum << " points of hunger*\n\n";
+    auto now = chrono::system_clock::now();
     time_t currentTime = std::chrono::system_clock::to_time_t(now);
     passTime(currentTime);
-     return actualHunger;
 }
 
-int Critter::play()
+void Critter::play()
 {
     int boredomToSum = 5;
     setBoredom(boredomToSum);
-    int actualBoredom = getBoredom();
-    auto now = std::chrono::system_clock::now();
+    cout << m_Name << ": Yippieee, yay yay yippie :3 :3\n*Your critter gets " << boredomToSum << " points of boredom*\n\n";
+    auto now = chrono::system_clock::now();
     time_t currentTime = std::chrono::system_clock::to_time_t(now);
     passTime(currentTime);
-    return actualBoredom;
 }
 
 void Critter::passTime(time_t lastUpdateTime)
@@ -131,18 +134,15 @@ void Critter::passTime(time_t lastUpdateTime)
     int rest = 0;
     time_t currentTime = getTime();
     time_t timeDifference = lastUpdateTime - currentTime;
-    cout <<"Temps previ:" << timeDifference << endl;
-    while (timeDifference >= 3)
+    while (timeDifference >= 1)
     {
-        rest--;
+        rest -= 3;
         timeDifference -= 3;
     }
-    cout << "Temps post: " << timeDifference<<endl;
     if (rest < 0)
     {
         setBoredom(rest);
         setHunger(rest);
         setTime(lastUpdateTime);
     }
-    cout << endl <<m_Boredom << endl << m_Hunger << endl << endl;
 }

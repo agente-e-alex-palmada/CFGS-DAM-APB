@@ -6,3 +6,4 @@
 using namespace std;
 
 void menu();
+void deathHandler(int passedHunger);

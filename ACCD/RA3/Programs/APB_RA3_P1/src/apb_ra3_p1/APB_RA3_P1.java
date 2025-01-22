@@ -379,7 +379,7 @@ public class APB_RA3_P1 {
 
             // Prepare the SQL query to insert a new game
             PreparedStatement insertNewGame = connection.prepareStatement(
-                "INSERT INTO partides(id, resultat, temps, tipus, idjugador1, idjugador2) VALUES (?, ?, ?, ?, ?, ?)"
+                    "INSERT INTO partides(id, resultat, temps, tipus, idjugador1, idjugador2) VALUES (?, ?, ?, ?, ?, ?)"
             );
 
             // Set the values in the PreparedStatement
@@ -421,7 +421,7 @@ public class APB_RA3_P1 {
         ResultSet resultSet = pstmtCheck.executeQuery();
         return resultSet.next();  // Returns true if the player exists
     }
-    
+
     // This function is used to get the last ID from games, so when we introduce a new player, it will scale plus 1 from the last one
     private static int lastIDGames() throws SQLException {
         int id = 0;
@@ -440,7 +440,68 @@ public class APB_RA3_P1 {
         connection.close();
         return id;
     }
-    private static void exercice5() {
 
+    private static void exercice5() throws SQLException {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Error at registering SQL driver: " + ex);
+        }
+        Connection connection = null;
+        connection = DriverManager.getConnection(
+                "jdbc:postgresql://127.0.0.1:5432/clash",
+                "postgres", "accedir");
+
+        try {
+            // Shows the players that can be selected
+            Statement stmt = connection.createStatement();
+            ResultSet playersData = stmt.executeQuery("SELECT * FROM jugadors");
+            while (playersData.next()) {
+                System.out.println("ID: " + playersData.getString("id"));
+                System.out.println("Player name: " + playersData.getString("nom"));
+                System.out.println("");
+            }
+
+            // Asks the user to select a player
+            Scanner entry = new Scanner(System.in);
+            System.out.println("Select which player do you want to delete by their ID: ");
+
+            // Parse the string to an int, so string cannot be an int if it isn't parsed.
+            String inputID = entry.nextLine();
+            int id = Integer.parseInt(inputID);
+
+            // Checks if the player exists
+            String checkQuery = "SELECT * FROM jugadors WHERE id = ?";
+            PreparedStatement pstmtCheck = connection.prepareStatement(checkQuery);
+            pstmtCheck.setInt(1, id);
+            ResultSet checkResult = pstmtCheck.executeQuery();
+
+            if (checkResult.next()) {
+                // Player exists, ask if the user is sure
+                System.out.println("Are you sure you want to delete the player with ID " + id + "? (yes/no)");
+                String confirmation = entry.nextLine().toLowerCase();
+
+                if (confirmation.equals("yes")) {
+                    // Proceed to delete the player
+                    String deleteQuery = "DELETE FROM jugadors WHERE id = ?";
+                    PreparedStatement pstmtDelete = connection.prepareStatement(deleteQuery);
+                    pstmtDelete.setInt(1, id);
+                    int rowsAffected = pstmtDelete.executeUpdate();
+
+                    if (rowsAffected > 0) {
+                        System.out.println("Player with ID " + id + " has been successfully deleted.");
+                    } else {
+                        System.out.println("Error deleting player.");
+                    }
+                } else {
+                    System.out.println("Player deletion cancelled.");
+                }
+            } else {
+                System.out.println("No player found with ID " + id);
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
     }
 }

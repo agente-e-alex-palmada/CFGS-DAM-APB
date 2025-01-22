@@ -2,7 +2,7 @@
 #include "Critter.h"
 
 void main(){
-	int selection, hunger = 100, boredom = 100;
+	int selection, hunger = 75, boredom = 75, actualHunger;
 	bool programRunning = true;
 	string name;
 	auto now = chrono::system_clock::now();
@@ -26,19 +26,30 @@ void main(){
 			programRunning = false;
 			break;
 		case 1:
+			actualHunger = myCritter.getHunger();
+			deathHandler(actualHunger);
 			myCritter.talk();
 			programRunning = true;
 			break;
 		case 2:
+			actualHunger = myCritter.getHunger();
+			deathHandler(actualHunger);
 			myCritter.eat();
 			programRunning = true;
 			break;
 		case 3:
+			actualHunger = myCritter.getHunger();
+			deathHandler(actualHunger);
 			myCritter.play();
 			programRunning = true;
 			break;
+		case 7:
+			myCritter.secretTalk();
+			programRunning = true;
+			break;
 		default:
-			system("cls");
+			actualHunger = myCritter.getHunger();
+			deathHandler(actualHunger);
 			programRunning = true;
 			break;
 		}
