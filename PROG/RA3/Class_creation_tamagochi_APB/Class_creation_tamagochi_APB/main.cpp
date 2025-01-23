@@ -1,59 +1,158 @@
-#include "myheader.h"
+﻿#include "myheader.h"
 #include "Critter.h"
+#include "Farm.h"
 
 void main(){
-	int selection, hunger = 75, boredom = 75, actualHunger;
+	
+	// Select option
+	int selection, selectedCritter;
+	// Handles menus
 	bool programRunning = true;
-	string name;
-	auto now = chrono::system_clock::now();
-	time_t actualTime = std::chrono::system_clock::to_time_t(now);
-	std::cout << "What name you want to put to your new Critter?\n\nWrite: ";
-	getline(cin, name);
-	system("cls");
-	Critter myCritter(hunger, boredom, name, actualTime);
+	
+	// Creates an empty farm
+	Farm myFarm({});
+	cout << "Welcome to Critter Caretaker\n\n";
+
+	// Starts the first menu
 	while (programRunning)
 	{
-		menu();
+		menu(myFarm);
 		cin >> selection;
-		system("cls");
-		if (cin.fail() || selection < 0 || selection > 4)
+		if (cin.fail() || selection < 0)
 		{
 			programRunning = true;
 		}
 		switch (selection)
 		{
 		case 0:
+			system("cls");
 			programRunning = false;
 			break;
 		case 1:
-			actualHunger = myCritter.getHunger();
-			deathHandler(actualHunger);
-			myCritter.talk();
+			system("cls");
 			programRunning = true;
-			break;
+			myFarm.addCritter(critterCreator());
 		case 2:
-			actualHunger = myCritter.getHunger();
-			deathHandler(actualHunger);
-			myCritter.eat();
-			programRunning = true;
-			break;
-		case 3:
-			actualHunger = myCritter.getHunger();
-			deathHandler(actualHunger);
-			myCritter.play();
-			programRunning = true;
-			break;
-		case 7:
-			myCritter.secretTalk();
+			system("cls");
+			if (myFarm.getCritterCount() > 0)
+			{
+				selectedCritter = critterSelector(myFarm);
+				myFarm.removeCritter(selectedCritter);
+				// myFarm
+			}
+			else
+			{
+				cout << "You have no Critters.\n";
+			}
 			programRunning = true;
 			break;
 		default:
-			actualHunger = myCritter.getHunger();
-			deathHandler(actualHunger);
+			system("cls");
 			programRunning = true;
 			break;
 		}
 	}
 	system("cls");
-	std::cout << "Goodbye\n";
+	cout << "Goodbye\n";
 }
+
+int critterSelector(Farm myFarm) {
+	bool selectingCritter = true;
+	int selection;
+	while (selectingCritter)
+	{
+		cout << "Critters at farm:\n";
+		myFarm.listCritters();
+		size_t crittersCount = myFarm.getCritterCount();
+		cin >> selection;
+		if (cin.fail() || selection < 0)
+		{
+			selectingCritter = true;
+		}
+	}
+	return selection;
+}
+
+Critter critterCreator() {
+	string name;
+	cout << "What name you want to put to your new Critter?\n\nWrite: ";
+	getline(cin, name);
+	system("cls");
+
+	// Saves the moment the critter has born
+	auto now = chrono::system_clock::now();
+	time_t bornTime = chrono::system_clock::to_time_t(now);
+	Critter newCritter(HUNGER, BOREDOM, name, bornTime);
+	return newCritter;
+}
+
+void menu(Farm myFarm) {
+	cout << "0. Exit\n";
+	cout << "1. Create a new Critter\n";
+	if (myFarm.getCritterCount() != 0)
+	{
+		cout << "2. Interact with Critters";
+	}
+}
+
+// This should go to another func
+
+
+
+//string name;
+//cout << "What name you want to put to your new Critter?\n\nWrite: ";
+//getline(cin, name);
+//system("cls");
+//
+//
+//// Critter borns
+//Critter myCritter(hunger, boredom, name, actualTime);
+//
+//// Starts the menu
+//while (programRunning)
+//{
+//	menu();
+//	cin >> selection;
+//	system("cls");
+//	if (cin.fail() || selection < 0)
+//	{
+//		programRunning = true;
+//	}
+//
+//	// Does an interaction depending of the user selection
+//	switch (selection)
+//	{
+//	case 0:
+//		programRunning = false;
+//		break;
+//	case 1:
+//		actualHunger = myCritter.getHunger();
+//		deathHandler(actualHunger);
+//		myCritter.talk();
+//		programRunning = true;
+//		break;
+//	case 2:
+//		actualHunger = myCritter.getHunger();
+//		deathHandler(actualHunger);
+//		myCritter.eat();
+//		programRunning = true;
+//		break;
+//	case 3:
+//		actualHunger = myCritter.getHunger();
+//		deathHandler(actualHunger);
+//		myCritter.play();
+//		programRunning = true;
+//		break;
+//	case 7:
+//		myCritter.secretTalk();
+//		programRunning = true;
+//		break;
+//	default:
+//		actualHunger = myCritter.getHunger();
+//		deathHandler(actualHunger);
+//		programRunning = true;
+//		break;
+//	}
+//}
+//system("cls");
+//cout << "Goodbye\n";

@@ -1,8 +1,10 @@
 #include "myheader.h"
 #include "Critter.h"
 
+// What does the Critter when it's created
 Critter::Critter(int hunger, int boredom, string name, time_t timePassed)
 {
+    // Saves all stats passed
     m_Hunger = hunger;
     m_Boredom = boredom;
     m_Time = timePassed;
@@ -10,6 +12,7 @@ Critter::Critter(int hunger, int boredom, string name, time_t timePassed)
     cout << "Hello, I'm " << name << ". I've just born.\nNice to meet you.\n\n";
 }
 
+// Getters and setters
 int Critter::getHunger() const
 {
     return m_Hunger;
@@ -18,6 +21,11 @@ int Critter::getHunger() const
 int Critter::getBoredom() const
 {
     return m_Boredom;
+}
+
+string Critter::getName() const
+{
+    return m_Name;
 }
 
 time_t Critter::getTime() const
@@ -57,11 +65,17 @@ void Critter::setBoredom(int boredom)
     }
 }
 
+void Critter::setName(string name)
+{
+    m_Name = name;
+}
+
 void Critter::setTime(time_t timePassed)
 {
     m_Time = timePassed;
 }
 
+// Interact with Critter to know their stats
 void Critter::talk()
 {
     int boredom = getBoredom(), hunger = getHunger();
@@ -104,11 +118,12 @@ void Critter::talk()
     passTime(currentTime);
     cout << "I'm a Critter and I feel " << actualBoredom << ".\nAlso, I'm " << actualHunger << endl;
 }
-
+// Secret talk to know the values of the variables
 void Critter::secretTalk() {
     cout << "Stats:\nHunger: " << m_Hunger << "\nBoredom: " << m_Boredom << endl << endl;
 }
 
+// Interact with Critter to sum hunger stat
 void Critter::eat()
 {
     int hungerToSum = 5;
@@ -119,6 +134,7 @@ void Critter::eat()
     passTime(currentTime);
 }
 
+// Interact with Critter to sum boredom stat
 void Critter::play()
 {
     int boredomToSum = 5;
@@ -129,6 +145,7 @@ void Critter::play()
     passTime(currentTime);
 }
 
+// Function called everytime when interacting that saves the last interaction and checks how much time has pased since new interaction, every 3 seconds will substract points to the stats
 void Critter::passTime(time_t lastUpdateTime)
 {
     int rest = 0;
