@@ -5,7 +5,8 @@
 #include <chrono>
 #include <ctime>
 #include <vector>
+
 using namespace std;
-const int HUNGER = 75, BOREDOM = 75;
-void menu();
+const int HUNGER = 50, BOREDOM = 50;
+void menuCritter();
 void deathHandler(int passedHunger);

@@ -1,10 +1,12 @@
 #include "myheader.h"
+#include "Farm.h"
+#include "Critter.h"
 
-void menu() {
-	cout << "Critter Caretaker\n\n";
-	cout << "0 - Quit\n";
-	cout << "1 - Listen to your Critter\n";
-	cout << "2 - Feed your Critter\n";
-	cout << "3 - Play with your Critter\n\n";
-	cout << "Choice: ";
+void menu(Farm myFarm) {
+	cout << "0. Exit\n";
+	cout << "1. Create a new Critter\n";
+	if (myFarm.getCritterCount() != 0)
+	{
+		cout << "2. Interact with Critters";
+	}
 }

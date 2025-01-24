@@ -1,4 +1,5 @@
 #include "Farm.h"
+#include "Critter.h"
 #include "myheader.h"
 
 // 
@@ -36,3 +37,4 @@ size_t Farm::getCritterCount() const
 {
     return m_critters.size();
 }
+

@@ -1,5 +1,6 @@
 #pragma once
 #include "myheader.h"
+
 // The class Critter
 class Critter
 {
@@ -23,7 +24,6 @@ public:
 	void eat();
 	void play();
 	void secretTalk();
-
 
 private:
 

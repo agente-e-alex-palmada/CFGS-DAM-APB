@@ -2,15 +2,58 @@
 #include "Critter.h"
 #include "Farm.h"
 
-void main(){
+void menu(Farm myFarm) {
+	cout << "0. Exit\n";
+	cout << "1. Create a new Critter\n";
+	if (myFarm.getCritterCount() != 0)
+	{
+		cout << "2. Interact with Critters";
+	}
+}
+
+//Critter critterCreator() {
+//	string name;
+//	cout << "What name you want to put to your new Critter?\n\nWrite: ";
+//	getline(cin, name);
+//	system("cls");
+//
+//	// Saves the moment the critter has born
+//	auto now = chrono::system_clock::now();
+//	time_t bornTime = chrono::system_clock::to_time_t(now);
+//	Critter newCritter(HUNGER, BOREDOM, name, bornTime);
+//	return newCritter;
+//}
+//
+//int critterSelector(Farm myFarm) {
+//	bool selectingCritter = true;
+//	int selection;
+//	while (selectingCritter)
+//	{
+//		system("cls");
+//		cout << "Critters at farm:\n";
+//		myFarm.listCritters();
+//		size_t crittersCount = myFarm.getCritterCount();
+//		cout << "Select which Critter you want to interact: ";
+//		cin >> selection;
+//		if (cin.fail() || selection < 0 || selection > crittersCount)
+//		{
+//			selectingCritter = true;
+//		}
+//	}
+//	return selection;
+//}
+
+int main(){
 	
 	// Select option
 	int selection, selectedCritter;
+
 	// Handles menus
 	bool programRunning = true;
 	
 	// Creates an empty farm
 	Farm myFarm({});
+	//Critter defaultCritter(0, 0, "i", 0);
 	cout << "Welcome to Critter Caretaker\n\n";
 
 	// Starts the first menu
@@ -31,19 +74,18 @@ void main(){
 		case 1:
 			system("cls");
 			programRunning = true;
-			myFarm.addCritter(critterCreator());
+			//defaultCritter = critterCreator();
+			//myFarm.addCritter(defaultCritter);
 		case 2:
 			system("cls");
-			if (myFarm.getCritterCount() > 0)
+			/*if (myFarm.getCritterCount() > 0)
 			{
 				selectedCritter = critterSelector(myFarm);
-				myFarm.removeCritter(selectedCritter);
-				// myFarm
 			}
 			else
 			{
 				cout << "You have no Critters.\n";
-			}
+			}*/
 			programRunning = true;
 			break;
 		default:
@@ -54,60 +96,12 @@ void main(){
 	}
 	system("cls");
 	cout << "Goodbye\n";
+	return 0;
 }
 
-int critterSelector(Farm myFarm) {
-	bool selectingCritter = true;
-	int selection;
-	while (selectingCritter)
-	{
-		cout << "Critters at farm:\n";
-		myFarm.listCritters();
-		size_t crittersCount = myFarm.getCritterCount();
-		cin >> selection;
-		if (cin.fail() || selection < 0)
-		{
-			selectingCritter = true;
-		}
-	}
-	return selection;
-}
-
-Critter critterCreator() {
-	string name;
-	cout << "What name you want to put to your new Critter?\n\nWrite: ";
-	getline(cin, name);
-	system("cls");
-
-	// Saves the moment the critter has born
-	auto now = chrono::system_clock::now();
-	time_t bornTime = chrono::system_clock::to_time_t(now);
-	Critter newCritter(HUNGER, BOREDOM, name, bornTime);
-	return newCritter;
-}
-
-void menu(Farm myFarm) {
-	cout << "0. Exit\n";
-	cout << "1. Create a new Critter\n";
-	if (myFarm.getCritterCount() != 0)
-	{
-		cout << "2. Interact with Critters";
-	}
-}
 
 // This should go to another func
 
-
-
-//string name;
-//cout << "What name you want to put to your new Critter?\n\nWrite: ";
-//getline(cin, name);
-//system("cls");
-//
-//
-//// Critter borns
-//Critter myCritter(hunger, boredom, name, actualTime);
-//
 //// Starts the menu
 //while (programRunning)
 //{
@@ -154,5 +148,3 @@ void menu(Farm myFarm) {
 //		break;
 //	}
 //}
-//system("cls");
-//cout << "Goodbye\n";
