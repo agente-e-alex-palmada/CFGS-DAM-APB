@@ -2,10 +2,16 @@
 #include "Critter.h"
 #include "myheader.h"
 
-// 
-Farm::Farm(vector<Critter> critters) : m_critters(critters)
+// Default constructor, farm is empty
+Farm::Farm() : m_critters()
 {
 
+}
+
+// Constructor parametrizado: inicializa la granja con un vector de Critters
+Farm::Farm(vector<Critter> critters) : m_critters(critters)
+{
+    cout << "Farm initialized with " << m_critters.size() << " critters." << endl;
 }
 
 // Add a new Critter to the Vector
