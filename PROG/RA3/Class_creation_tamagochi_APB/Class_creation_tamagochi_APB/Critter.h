@@ -7,6 +7,7 @@ class Critter
 public:
 
 	// The object Critter with their stats
+	Critter();
 	Critter(int hunger, int boredom, string name, time_t timePassed);
 	
 	// Getters and setters
@@ -18,6 +19,9 @@ public:
 	void setBoredom(int boredom);
 	void setName(string name);
 	void setTime(time_t timePassed);
+	void deathHandler();
+	bool isDead() const;
+	void markAsDead();
 
 	// Functions to interact with the Critter
 	void talk();

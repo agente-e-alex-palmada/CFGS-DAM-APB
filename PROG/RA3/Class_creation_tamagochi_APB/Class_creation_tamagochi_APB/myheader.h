@@ -7,6 +7,5 @@
 #include <vector>
 
 using namespace std;
-const int HUNGER = 50, BOREDOM = 50;
+const int DEFAULT_HUNGER = 10, DEFAULT_BOREDOM = 10;
 void menuCritter();
-void deathHandler(int passedHunger);

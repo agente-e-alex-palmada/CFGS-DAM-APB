@@ -1,6 +1,11 @@
 #include "myheader.h"
 #include "Critter.h"
 
+Critter::Critter()
+{
+    // It's just a constructor
+}
+
 // What does the Critter when it's created
 Critter::Critter(int hunger, int boredom, string name, time_t timePassed)
 {
@@ -9,7 +14,6 @@ Critter::Critter(int hunger, int boredom, string name, time_t timePassed)
     m_Boredom = boredom;
     m_Time = timePassed;
     m_Name = name;
-    cout << "Hello, I'm " << name << ". I've just born.\nNice to meet you.\n\n";
 }
 
 // Getters and setters
@@ -75,6 +79,27 @@ void Critter::setTime(time_t timePassed)
     m_Time = timePassed;
 }
 
+void Critter::deathHandler()
+{
+    if (m_Hunger <= 0 || m_Boredom <= 0) {
+        system("cls");
+        cout << m_Name << " has died. RIP :c.\n\n";
+        // Additional actions for the critter's death can be added here
+        m_Hunger = 0;
+        m_Boredom = 0;  // Set both stats to 0 to ensure the critter is fully dead
+    }
+}
+
+// Agregar un flag que indique si el critter está muerto
+bool isDead() const {
+    return m_Hunger == 0 && m_Boredom == 0;
+}
+
+void markAsDead() {
+    m_Hunger = 0;  // Marca que está muerto
+    m_Boredom = 0;
+}
+
 // Interact with Critter to know their stats
 void Critter::talk()
 {
@@ -121,6 +146,9 @@ void Critter::talk()
 // Secret talk to know the values of the variables
 void Critter::secretTalk() {
     cout << "Stats:\nHunger: " << m_Hunger << "\nBoredom: " << m_Boredom << endl << endl;
+    auto now = chrono::system_clock::now();
+    time_t currentTime = std::chrono::system_clock::to_time_t(now);
+    passTime(currentTime);
 }
 
 // Interact with Critter to sum hunger stat
@@ -153,8 +181,8 @@ void Critter::passTime(time_t lastUpdateTime)
     time_t timeDifference = lastUpdateTime - currentTime;
     while (timeDifference >= 1)
     {
-        rest -= 3;
-        timeDifference -= 3;
+        rest -= 1;
+        timeDifference -= 1;
     }
     if (rest < 0)
     {
