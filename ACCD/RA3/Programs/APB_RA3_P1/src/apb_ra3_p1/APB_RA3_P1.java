@@ -21,7 +21,7 @@ public class APB_RA3_P1 {
         int option = 0;
         //
         menu();
-        while (option != 6) {
+        while (option != 8) {
             Scanner keyboard = new Scanner(System.in);
             System.out.print("Select option: ");
             option = keyboard.nextInt();
@@ -38,7 +38,10 @@ public class APB_RA3_P1 {
         System.out.println("3.- Update data from a player");
         System.out.println("4.- Insert new game between two players");
         System.out.println("5.- Delete a player and their games");
-        System.out.println("6.- Exit");
+        System.out.println("6.- Add new card");
+        System.out.println("7.- Show cards from player");
+        System.out.println("8.- Exit");
+
     }
 
     // Gets the user int and goes to the exercice
@@ -59,11 +62,16 @@ public class APB_RA3_P1 {
             case 5:
                 exercice5();
                 break;
+            case 6:
+                exercice6();
+            case 7:
+                exercice7();
         }
     }
 
     // At this exercice, the function does a query to the databse and get the data, then it shows the data from the query with sout's.
     private static void exercice1() throws SQLException {
+
         // Trys to get the driver
         try {
             Class.forName("org.postgresql.Driver");
@@ -503,5 +511,185 @@ public class APB_RA3_P1 {
         } catch (SQLException e) {
             System.out.println(e);
         }
+    }
+
+    // This function lets the user to introduce a new card to the database
+    private static void exercice6() throws SQLException {
+
+        //  Tries to load the driver
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Error at registering SQL driver: " + ex);
+        }
+
+        // Creates a connection to the database
+        Connection connection = null;
+        connection = DriverManager.getConnection(
+                "jdbc:postgresql://127.0.0.1:5432/clash",
+                "postgres", "accedir");
+        try {
+
+            // Init variables
+            int idPlayer = 0;
+            int cardLevel = 0;
+            String cardRarity = null;
+            String cardName = null;
+            Scanner entry = new Scanner(System.in);
+
+            // Will do some loops to ask the user for data, every loop will check if the introduced data is correct.
+            while (true) {
+                System.out.println("What player does have this card? (id): ");
+                idPlayer = entry.nextInt();
+                entry.nextLine();
+                try {
+                    if (isValidPlayer(connection, idPlayer)) {
+                        break;
+                    } else {
+                        System.out.println("Invalid Player ID. Please enter a valid ID.");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input format. Please enter a valid integer for Player ID.");
+                }
+            }
+            while (true) {
+                try {
+                    System.out.println("What's the name of the card?: ");
+                    cardName = entry.nextLine();
+                    break;
+
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input format.");
+                }
+            }
+            while (true) {
+                System.out.println("What's the level of the card?: ");
+                cardLevel = entry.nextInt();
+                entry.nextLine();
+                try {
+                    if (cardLevel < 1 || cardLevel > 14) {
+                        System.out.println("Card level must be between 1-14");
+                    } else {
+                        break;
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input format.");
+                }
+            }
+            while (true) {
+                System.out.println("What's the rarity of the card?: ");
+                cardRarity = entry.nextLine();
+                cardRarity.toLowerCase();
+                try {
+                    if (!"legendary".equals(cardRarity) || !"hero".equals(cardRarity) || !"normal".equals(cardRarity) || !"epic".equals(cardRarity) || !"special".equals(cardRarity)) {
+                        break;
+                    } else {
+                        System.out.println("Only rarities: legendary, hero, normal, epic, special.");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input format.");
+                }
+            }
+
+            // Get the last ID from cards
+            int id = lastIdCards() + 1;
+
+            // Prepare the SQL query to insert a new card
+            PreparedStatement insertCard = connection.prepareStatement(
+                    "INSERT INTO cards(id, idplayer, name, level, rarity) VALUES (?, ?, ?, ?, ?)"
+            );
+
+            // Set the values in the PreparedStatement
+            insertCard.setInt(1, id);
+            insertCard.setInt(2, idPlayer);
+            insertCard.setString(3, cardName);
+            insertCard.setInt(4, cardLevel);
+            insertCard.setString(5, cardRarity);
+
+            // Execute the insert query
+            int rowsAffected = insertCard.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("New card inserted successfully!");
+            } else {
+                System.out.println("Failed to insert new card.");
+            }
+            connection.close();
+        } catch (SQLException ex) {
+            System.out.println("SQL Exception error: ");
+            System.out.println(ex);
+        }
+    }
+
+    // Just does a query to know which is the last ID from the table cards
+    private static int lastIdCards() throws SQLException {
+        int id = 0;
+        Connection connection = null;
+        connection = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/clash", "postgres", "accedir");
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT id FROM cards order by id ASC");
+            while (rs.next()) {
+                id = rs.getInt("id");
+            }
+        } catch (SQLException ex) {
+            System.out.println("Exception error from SQL: ");
+            System.out.println(ex.getMessage());
+        }
+        connection.close();
+        return id;
+    }
+
+    // This function shows all cards a user has on the table
+    private static void exercice7() throws SQLException {
+        
+        // Loads the driver
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Error at registering SQL driver: " + ex);
+        }
+        
+        // Connects to the databse with the password
+        Connection connection = null;
+        connection = DriverManager.getConnection(
+                "jdbc:postgresql://127.0.0.1:5432/clash",
+                "postgres", "accedir");
+        Statement stmt = connection.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT id FROM jugadors ORDER BY id ASC");
+
+        // Shows all the players
+        while (rs.next()) {
+            System.out.println("ID: " + rs.getString("id"));
+        }
+        int idPlayer = 0;
+        Scanner entry = new Scanner(System.in);
+
+        // Will do a loop to ask the user for the player ID, it will verify if it is correct.
+        while (true) {
+            System.out.println("What player do you wanna see the cards? (id): ");
+            idPlayer = entry.nextInt();
+            entry.nextLine();
+            try {
+                if (isValidPlayer(connection, idPlayer)) {
+                    break;
+                } else {
+                    System.out.println("Invalid Player ID. The user does not exist or does not have cards.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input format. Please enter a valid integer for Player ID.");
+            }
+        }
+
+        // Creates the query and saves it on a variable
+        Statement asking = connection.createStatement();
+        ResultSet cardsPlayer = asking.executeQuery("SELECT * FROM cards WHERE idplayer = " + idPlayer);
+        while (cardsPlayer.next()) {
+            System.out.println("ID: " + cardsPlayer.getInt("id"));
+            System.out.println("ID of the player: " + cardsPlayer.getInt("idplayer"));
+            System.out.println("Name: " + cardsPlayer.getString("name"));
+            System.out.println("Level: " + cardsPlayer.getInt("level"));
+            System.out.println("Rarity: " + cardsPlayer.getString("rarity"));
+        }
+        connection.close();
     }
 }
