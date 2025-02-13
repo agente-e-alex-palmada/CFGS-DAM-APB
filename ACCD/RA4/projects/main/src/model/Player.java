@@ -1,13 +1,43 @@
 package model;
 
-public class Player {
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "players")
+public class Player {
+    
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     protected int user_id;
+    
+    @Basic
+    @Column(name = "name", length = 50, nullable = true)
     protected String name;
+    
+    @Basic
+    @Column(name = "level", nullable = true)
     protected int level;
+    
+    @Basic
+    @Column(name = "trophies", nullable = true)
     protected int trophies;
+    
+    @Basic
+    @Column(name = "gold", nullable = true)
     protected int gold;
+    
+    @Basic
+    @Column(name = "gems", nullable = true)    
     protected int gems;
+    
+    @Basic
+    @Column(name = "stars", nullable = true)    
     protected int stars;
 
     public Player(int user_id, String name, int level, int trophies, int gold, int gems, int stars) {

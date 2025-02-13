@@ -1,25 +1,2 @@
 ﻿  Engine.cpp
-E:\AluCiclesGS1\APB\PROG\RA3\Engine\Engine\Hero.h(22,26): warning C4305: 'inicializando': truncamiento de 'double' a 'const float'
-  (compilando archivo de origen "Engine.cpp")
-  
-E:\AluCiclesGS1\APB\PROG\RA3\Engine\Engine\Engine.cpp(107,20): warning C4018: '<': no coinciden signed/unsigned
-  Hero.cpp
-E:\AluCiclesGS1\APB\PROG\RA3\Engine\Engine\Hero.h(22,26): warning C4305: 'inicializando': truncamiento de 'double' a 'const float'
-  (compilando archivo de origen "Hero.cpp")
-  
-E:\AluCiclesGS1\APB\PROG\RA3\Engine\Engine\Hero.cpp(24,24): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
-E:\AluCiclesGS1\APB\PROG\RA3\Engine\Engine\Hero.cpp(24,24): warning C4244:         with
-E:\AluCiclesGS1\APB\PROG\RA3\Engine\Engine\Hero.cpp(24,24): warning C4244:         [
-E:\AluCiclesGS1\APB\PROG\RA3\Engine\Engine\Hero.cpp(24,24): warning C4244:             T=unsigned int
-E:\AluCiclesGS1\APB\PROG\RA3\Engine\Engine\Hero.cpp(24,24): warning C4244:         ]
-E:\AluCiclesGS1\APB\PROG\RA3\Engine\Engine\Hero.cpp(23,43): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
-E:\AluCiclesGS1\APB\PROG\RA3\Engine\Engine\Hero.cpp(23,43): warning C4244:         with
-E:\AluCiclesGS1\APB\PROG\RA3\Engine\Engine\Hero.cpp(23,43): warning C4244:         [
-E:\AluCiclesGS1\APB\PROG\RA3\Engine\Engine\Hero.cpp(23,43): warning C4244:             T=unsigned int
-E:\AluCiclesGS1\APB\PROG\RA3\Engine\Engine\Hero.cpp(23,43): warning C4244:         ]
-  main.cpp
-E:\AluCiclesGS1\APB\PROG\RA3\Engine\Engine\Hero.h(22,26): warning C4305: 'inicializando': truncamiento de 'double' a 'const float'
-  (compilando archivo de origen "main.cpp")
-  
-  Generando código...
   Engine.vcxproj -> E:\AluCiclesGS1\APB\PROG\RA3\Engine\Debug\Engine.exe
