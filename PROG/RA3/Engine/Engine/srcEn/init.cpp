@@ -4,19 +4,27 @@ Init::Init() {}
 
 Init::~Init() {}
 
-void Init::sprite(std::vector<std::string>& path, std::vector<sf::Sprite>& sprites) {
-	sf::Texture texture;
-	int numPath = path.size();
-	for (int i = 0; i < numPath; i++)
-	{
-		if (!texture.loadFromFile(path[i])) {
-			std::cout << "Can't load from file: " << path[i] << std::endl;
-		} else {
-			sf::Sprite sprite(texture);
-			sprites.push_back(sprite);
-		}
-	}
+bool Init::sprite(std::map<std::string, sf::Texture*> textures, const std::vector<sf::Vector2f>& scales, std::vector<sf::Sprite>& sprites) {
+    
+    // Clear the vector to ensure no leftover sprites from previous calls
+    sprites.clear();
+
+    // Iterate through each texture and scale, creating a sprite for each one
+    auto textureIt = textures.begin();
+    auto scaleIt = scales.begin();
+
+    while (textureIt != textures.end() && scaleIt != scales.end()) {
+        sf::Sprite sprite(*textureIt->second);
+        sprite.setScale(*scaleIt);
+        sprites.push_back(sprite);
+
+        ++textureIt;
+        ++scaleIt;
+    }
+
+    return true;
 }
+
 
 //void Init::afont(const string& path) {
 //

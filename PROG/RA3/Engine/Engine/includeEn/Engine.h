@@ -2,6 +2,7 @@
 #include <../include/SFML/Graphics.hpp>
 #include <../include/SFML/Audio.hpp>
 #include <vector>
+#include <map>
 #include <string>
 #include "Init.h"
 
@@ -20,10 +21,14 @@ public:
 
 private:
 
+// Paths through the folders to the files
 	std::vector<std::string> spritePaths;
 
-	Init initialization;
+// Where the background and sky will be positioned
+	std::vector<std::string> spritePositions;
 
+// Initialize init class
+	Init initialization;
 
 // Draw on screen the gameplay
 	void draw();
@@ -33,8 +38,9 @@ private:
 	sf::VideoMode vm;
 
 // Variables to load images
-	sf::Texture texture;
+	std::map<std::string, sf::Texture*> textures;
 	vector<sf::Sprite> sprites;
+	vector<sf::Vector2f> scales;
 
 // Variables for text
 	sf::Font font;
