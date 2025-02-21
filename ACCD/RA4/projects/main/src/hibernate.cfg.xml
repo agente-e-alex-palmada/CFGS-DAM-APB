@@ -45,7 +45,7 @@ Contributor(s):
     <!-- BD Name -->
     <property name="connection.driver_class">org.postgresql.Driver</property>
     <!-- DB Driver -->
-    <property name="connection.username">postgre</property>
+    <property name="connection.username">postgres</property>
     <!-- DB User -->
     <property name="connection.password">accedir</property>
     <!-- DB Password -->
@@ -57,29 +57,6 @@ Contributor(s):
     <property name="format_sql">true</property>
     <!-- Show SQL formatted -->
     <property name="hibernate.hbm2ddl.auto">update</property>
-    <mapping class="model.Player" file="" jar="" package="" resource=""/>
-    <mapping class="model.Games" file="" jar="" package="" resource=""/>
+    <mapping class="model.Player"/>
   </session-factory>
-  <hibernate-configuration>
-    <session-factory>
-      <property name="connection.url">jdbc:postgresql://localhost:5432/clash</property>
-      <!-- BD Mane -->
-      <property name="connection.driver_class">org.postgresql.Driver</property>
-      <!-- DB Driver -->
-      <property name="connection.username">postgre</property>
-      <!-- DB User -->
-      <property name="connection.password">Lsg-12345</property>
-      <!-- DB Password -->
-      <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-      <!-- DB Dialect -->
-      <!-- create / create-drop / update -->
-      <property name="show_sql">true</property>
-      <!-- Show SQL in console -->
-      <property name="format_sql">true</property>
-      <!-- Show SQL formatted -->
-      <property name="hibernate.hbm2ddl.auto">update</property>
-      <mapping class="model.jugador"/>
-      <mapping class="model.partida"/>
-    </session-factory>
-  </hibernate-configuration>
 </hibernate-configuration>

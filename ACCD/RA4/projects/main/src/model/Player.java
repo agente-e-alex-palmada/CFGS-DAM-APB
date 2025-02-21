@@ -40,8 +40,10 @@ public class Player {
     @Column(name = "stars", nullable = true)    
     protected int stars;
 
-    public Player(int user_id, String name, int level, int trophies, int gold, int gems, int stars) {
-        this.user_id = user_id;
+        public Player() {
+    }
+        
+    public Player(String name, int level, int trophies, int gold, int gems, int stars) {
         this.name = name;
         this.level = level;
         this.trophies = trophies;
@@ -105,7 +107,7 @@ public class Player {
     public void setStars(int new_stars) {
         stars = new_stars;
     }
-
+    
     public void showPlayerStats() {
         System.out.println("ID: " + user_id);
         System.out.println("Name: " + name);

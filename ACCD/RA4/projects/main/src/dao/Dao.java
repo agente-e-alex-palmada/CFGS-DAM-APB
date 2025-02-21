@@ -75,7 +75,7 @@ public class Dao {
         try {
         Session session = factory.openSession();
         session.beginTransaction();
-        Query q = session.createQuery("FROM player");
+        Query q = session.createQuery("FROM Player");
         result = (List) q.list();
         
         //sessio.getTransaction().commit();
