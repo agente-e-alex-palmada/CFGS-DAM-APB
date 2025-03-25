@@ -1,0 +1,37 @@
+ies > * {
+    font-family: Arial, Helvetica, sans-serif;
+}
+ies > nomCentre, web{
+    display: inline-block;
+}
+web {
+    float: right;
+}
+
+nomCentre{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+cicles{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+cicle{
+    display: block;
+}
+
+cicle > nom{
+    display: block;
+    font-weight: bold;
+    background-color: #dddddd;
+}
+cicle > grau{
+    display: inline-block;
+    border: 1px solid black;
+}
+cicle > decretoTitulo{
+    border: 1px solid black;
+    display: inline-block;
+}

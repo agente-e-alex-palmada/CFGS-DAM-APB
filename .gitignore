@@ -24,3 +24,5 @@ x64/
 /ACCD/RA4/projects/main/build/
 *.ogg
 /ACCD/RA4/projects/main/dist/
+*doc
+*odt

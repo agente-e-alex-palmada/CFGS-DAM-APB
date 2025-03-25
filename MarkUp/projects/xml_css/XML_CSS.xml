@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="XML_CSS.css"?>
+<ies>
+  <nomCentre>La Salle Girona</nomCentre>
+  <web>http://girona.lasalle.cat</web>
+  <cicles>
+    <cicle id="ASIX">
+      <nom>Administració de Sistemes Informátics en Xarxa</nom>
+      <grau>Superior</grau>
+      <decretoTitulo>2009</decretoTitulo>
+    </cicle>
+    <cicle id="DAM">
+      <nom>Desenvolpament d Aplicacions Multiplataforma</nom>
+      <grau>Superior</grau>
+      <decretoTitulo>2010</decretoTitulo>
+    </cicle>
+    <cicle id="DAW">
+      <nom>Desenvolupament d Aplicacions Web</nom>
+      <grau>Superior</grau>
+      <decretoTitulo>2010</decretoTitulo>
+    </cicle>
+    <cicle id="SMX">
+      <nom>Sistemes Microinformátics i Xarxes</nom>
+      <grau>Medio</grau>
+      <decretoTitulo>2008</decretoTitulo>
+    </cicle>
+  </cicles>
+</ies>
