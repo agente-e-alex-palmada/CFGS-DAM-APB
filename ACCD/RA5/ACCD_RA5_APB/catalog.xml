@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/E:/AluCiclesGS1/APB/ACCD/RA5/ACCD_RA5_APB/src/accd_ra5_apb/clash_1.xsd" uri="xml-resources/jaxb/clash/clash_1.xsd"/>
+</catalog>

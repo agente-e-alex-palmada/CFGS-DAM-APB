@@ -1,0 +1,41 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+professor{
+    border: 3px solid black;
+    margin-right: 900px;
+}
+
+departament{
+    display: block;
+    text-align: end;
+    font-weight: bold;
+    font-size: smaller;
+    color: white;
+    margin-top: 2%;
+    margin-left: 5%;
+    background-color: black;
+}
+
+nom, cognom{
+display: inline-block;
+font-size: 32px;
+margin-left: 2%;
+}
+
+nom {
+    margin-left: 5%;
+}
+
+carrecs{
+    display: block  ;
+    margin-bottom: 2%;
+}
+
+carrec{
+    display: block;
+    margin-left: 17%;
+    font-style: italic;
+    font-size: smaller;
+}

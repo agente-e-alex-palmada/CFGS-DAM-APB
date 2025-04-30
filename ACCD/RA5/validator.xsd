@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="clash">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="version" type="xs:string"/>
+        <xs:element name="players">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="player" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string"/>
+                    <xs:element name="trophies" type="xs:integer"/>
+                    <xs:element name="level">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                          <xs:minInclusive value="1"/>
+                          <xs:maxInclusive value="14"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="cards">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="card" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="cardName" type="xs:string"/>
+                                <xs:element name="cardLevel">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:integer">
+                                      <xs:minInclusive value="1"/>
+                                      <xs:maxInclusive value="14"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="rarity">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="common"/>
+                                      <xs:enumeration value="rare"/>
+                                      <xs:enumeration value="epic"/>
+                                      <xs:enumeration value="legendary"/>
+                                      <xs:enumeration value="hero"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="cardId" type="xs:string" use="required"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="id" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

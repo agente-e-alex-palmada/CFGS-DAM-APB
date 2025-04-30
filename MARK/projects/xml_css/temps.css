@@ -1,0 +1,63 @@
+temps {
+    display: flex;
+    border: 2px solid black;
+    flex-direction: row;
+    margin-top: 2rem;
+    margin-right: auto;
+}
+poblacio {
+    display: inline-table;
+}
+poblacio > nom {
+    background-color: black;
+    color: whitesmoke;
+    font-size: 3rem;
+}
+
+poblacio > data {
+    color: red;
+    display: block;
+    text-align: center;
+    font-size: xx-large;
+}
+
+comarca,vent,maxima,minima {
+    display: none;
+}
+
+previsions {
+    display: flex;
+}
+
+previsio[estat="ennuvolat"] {
+    background-color: rgb(217, 217, 217);
+}
+previsio[estat="pluja"] {
+    background-color: rgb(64, 64, 64);
+}
+
+previsio[estat="ennuvolat"] > graus {
+    background-image: url("images/ennuvolat.png");
+}
+previsio[estat="pluja"] > graus {
+    background-image: url("images/pluja.png");
+
+}
+
+previsio[estat="sol"] > graus {
+    background-image: url("images/sol.png");
+
+}
+
+previsio[estat="neu"] > graus {
+    background-image: url("images/neu.png");
+
+}
+
+graus {
+    padding: 3rem;
+    display: inline-block;
+    width: 48px;
+    height: auto;
+    background-repeat: no-repeat;
+}

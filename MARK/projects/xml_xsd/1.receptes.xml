@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" ?>
+<!-- Exemple vàlid -->
+<receptes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="base.xsd">
+	<recepta dificultat="5">
+		<nom>Papates amb llet</nom>
+		<ingredients>
+			<ingredient>
+				<quantitat>
+					<valor>125</valor>
+					<mesura>grams</mesura>
+				</quantitat>
+				<nom>all</nom>
+			</ingredient>
+			<ingredient>
+				<quantitat>
+					<valor>225</valor>
+					<mesura>grams</mesura>
+				</quantitat>
+				<nom>patata</nom>
+			</ingredient>
+			<ingredient>
+				<quantitat>
+					<valor>1</valor>
+					<mesura>litre</mesura>
+				</quantitat>
+				<nom>llet</nom>
+			</ingredient>
+		</ingredients>
+		<passos>
+			<pas>Fregir patates</pas>
+			<pas>Posar-hi la llet</pas>
+			<pas>deixar refredar</pas>
+		</passos>
+	</recepta>
+	<recepta dificultat="8">
+		<nom>beixamel</nom>
+		<ingredients>
+			<ingredient>
+				<quantitat>
+					<valor>225</valor>
+					<mesura>grams</mesura>
+				</quantitat>
+				<nom>farina</nom>
+			</ingredient>
+			<ingredient>
+				<quantitat>
+					<valor>1</valor>
+					<mesura>litre</mesura>
+				</quantitat>
+				<nom>llet</nom>
+			</ingredient>
+		</ingredients>
+		<passos>
+			<pas>remenar tot</pas>
+			<pas>posar a la paella</pas>
+		</passos>
+	</recepta>
+</receptes>
+			

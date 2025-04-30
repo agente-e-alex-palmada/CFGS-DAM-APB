@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:element name="clash" type="clashType" />
+    
+    <xs:complexType name="clashType">
+        <xs:sequence>
+            <xs:element name="versio" type="xs:string"/>
+            <xs:element name="jugador" maxOccurs="unbounded" type="jugadorType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="jugadorType">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="copes" type="xs:integer"/>
+            <xs:element name="nivell">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="1"/>
+                        <xs:maxInclusive value="14"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="carta" maxOccurs="unbounded" type="cartaType"/>
+            <xs:element name="clan" minOccurs="0" maxOccurs="1" type="clanType"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="cartaType">
+        <xs:sequence>
+            <xs:element name="nomcart" type="xs:string"/>
+            <xs:element name="nivellcart">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="1"/>
+                        <xs:maxInclusive value="14"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="raresa">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="comuna"/>
+                        <xs:enumeration value="rara"/>
+                        <xs:enumeration value="epica"/>
+                        <xs:enumeration value="llegendaria"/>
+                        <xs:enumeration value="heroi"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="idCart" type="xs:integer" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="clanType" >
+        <xs:sequence>
+            <xs:element name="nomClan" type="xs:string"/>
+            <xs:element name="copesClan" minOccurs="1" type="xs:integer"/>
+            <xs:element name="tipusClan">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="privat"/>
+                        <xs:enumeration value="public"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

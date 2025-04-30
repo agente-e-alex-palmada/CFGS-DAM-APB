@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet href="temps.css" type="text/css" ?>
+<temps>
+    <poblacio>
+        <nom>Olot</nom>
+        <comarca>Garrotxa</comarca>
+        <data>18-12-2011</data>
+    </poblacio>
+    <previsions>            
+	<maxima>21</maxima>
+        <minima>4</minima>
+	<vent>24 km/h</vent>
+        <previsio hora="08:00" estat="ennuvolat">
+	    <graus>5</graus>
+	</previsio>
+	<previsio hora="14:00" estat="neu">
+	    <graus>0</graus>
+	</previsio>
+	<previsio hora="20:00" estat="ennuvolat">
+	    <graus>1</graus>
+	</previsio>
+    </previsions>                     
+</temps>

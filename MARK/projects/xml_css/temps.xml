@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet href="temps.css" type="text/css" ?>
+<temps>
+    <poblacio>
+        <nom>Figueres</nom>
+        <comarca>Alt Empordà</comarca>
+        <data>19-12-2011</data>
+    </poblacio>
+    <previsions>            
+	<maxima>21</maxima>
+        <minima>1</minima>
+	<vent>24 km/h</vent>
+        <previsio hora="08:00" estat="ennuvolat">
+	    <graus>16</graus>
+	</previsio>
+	<previsio hora="14:00" estat="ennuvolat">
+	    <graus>24</graus>
+	</previsio>
+	<previsio hora="20:00" estat="pluja">
+	    <graus>20</graus>
+	</previsio>
+    </previsions>                     
+</temps>

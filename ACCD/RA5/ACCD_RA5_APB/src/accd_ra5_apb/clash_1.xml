@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clash>
+    <versio>12.3.2</versio>
+    <jugador id="1">
+        <nom>Xavier</nom>
+        <copes>5603</copes>
+        <nivell>14</nivell>
+        <carta idCart="1">
+            <nomcart>Gigante</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>rara</raresa>
+        </carta>
+        <carta idCart="2">
+            <nomcart>Mega aballero</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="3">
+            <nomcart>Princesa</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <carta idCart="4">
+            <nomcart>Gigante Noble</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="5">
+            <nomcart>Mago electrico</nomcart>
+            <nivellcart>11</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <carta idCart="6">
+            <nomcart>Mosquetera</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>rara</raresa>
+        </carta>
+        <carta idCart="7">
+            <nomcart>Esbirros</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="8">
+            <nomcart>Murcielagos</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="9">
+            <nomcart>Minero</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <carta idCart="10">
+            <nomcart>Principe</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="11">
+            <nomcart>Principe oscuro</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="12">
+            <nomcart>Caballero dorado</nomcart>
+            <nivellcart>14</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <clan>
+            <nomClan>Random Clan</nomClan>
+            <copesClan>300</copesClan>
+            <tipusClan>public</tipusClan>
+        </clan>
+    </jugador>
+    <jugador id="2">
+        <nom>Jordi</nom>
+        <copes>5334</copes>
+        <nivell>14</nivell>
+        <carta idCart="13">
+            <nomcart>Gigante</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>rara</raresa>
+        </carta>
+        <carta idCart="14">
+            <nomcart>Caballero</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="15">
+            <nomcart>Princesa</nomcart>
+            <nivellcart>11</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <carta idCart="16">
+            <nomcart>Mosquetera</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="17">
+            <nomcart>Principe oscuro</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="18">
+            <nomcart>Minero</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <carta idCart="19">
+            <nomcart>Esbirros</nomcart>
+            <nivellcart>11</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="20">
+            <nomcart>Mega caballero</nomcart>
+            <nivellcart>14</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="21">
+            <nomcart>Bola de fuego</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>rara</raresa>
+        </carta>
+        <carta idCart="22">
+            <nomcart>Rayo</nomcart>
+            <nivellcart>14</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="23">
+            <nomcart>Rey esqueleto</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="24">
+            <nomcart>Descarga</nomcart>
+            <nivellcart>11</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <clan>
+            <nomClan>Random Clans</nomClan>
+            <copesClan>340</copesClan>
+            <tipusClan>privat</tipusClan>
+        </clan>
+    </jugador>
+    <jugador id="3">
+        <nom>Marc</nom>
+        <copes>4454</copes>
+        <nivell>13</nivell>
+        <carta idCart="25">
+            <nomcart>Gigante</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="26">
+            <nomcart>Caballero</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="27">
+            <nomcart>Princesa</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <carta idCart="28">
+            <nomcart>Montapuercos</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>rara</raresa>
+        </carta>
+        <carta idCart="29">
+            <nomcart>Gigante esqueleto</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="30">
+            <nomcart>Arqueras</nomcart>
+            <nivellcart>14</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="31">
+            <nomcart>Pandilla de duendes</nomcart>
+            <nivellcart>14</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="32">
+            <nomcart>Duendes</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="33">
+            <nomcart>Valquiria</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>rara</raresa>
+        </carta>
+        <carta idCart="34">
+            <nomcart>Dragones esqueleto</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="11">
+            <nomcart>Globo bombastico</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="35">
+            <nomcart>Sabueso de lava</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <clan>
+            <nomClan>Clanes</nomClan>
+            <copesClan>440</copesClan>
+            <tipusClan>public</tipusClan>
+        </clan>
+    </jugador>
+    <jugador id="4">
+        <nom>Toni</nom>
+        <copes>5544</copes>
+        <nivell>14</nivell>
+        <carta idCart="36">
+            <nomcart>Ariete de batalla</nomcart>
+            <nivellcart>14</nivellcart>
+            <raresa>rara</raresa>
+        </carta>
+        <carta idCart="37">
+            <nomcart>Espiritu electrico</nomcart>
+            <nivellcart>14</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="38">
+            <nomcart>Espirito de fuego</nomcart>
+            <nivellcart>14</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="39">
+            <nomcart>Esqueletos</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="40">
+            <nomcart>Caballero</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="41">
+            <nomcart>Duendes con lanza</nomcart>
+            <nivellcart>14</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="42">
+            <nomcart>Ejercito de esqueletos</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="43">
+            <nomcart>Choza de barbaros</nomcart>
+            <nivellcart>14</nivellcart>
+            <raresa>rara</raresa>
+        </carta>
+        <carta idCart="44">
+            <nomcart>Choza de duendes</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>rara</raresa>
+        </carta>
+        <carta idCart="45">
+            <nomcart>Horno</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>rara</raresa>
+        </carta>
+        <carta idCart="46">
+            <nomcart>Espejo</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="47">
+            <nomcart>Cañon</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <clan>
+            <nomClan>Clanes</nomClan>
+            <copesClan>440</copesClan>
+            <tipusClan>public</tipusClan>
+        </clan>
+    </jugador>
+    <jugador id="5">
+        <nom>Sheila</nom>
+        <copes>4988</copes>
+        <nivell>13</nivell>
+        <carta idCart="48">
+            <nomcart>Tornado</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="49">
+            <nomcart>Mini peka</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>rara</raresa>
+        </carta>
+        <carta idCart="50">
+            <nomcart>Choza de esqueletos</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>rara</raresa>
+        </carta>
+        <carta idCart="51">
+            <nomcart>Espiritu sanador</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>rara</raresa>
+        </carta>
+        <carta idCart="52">
+            <nomcart>Cementerio</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="53">
+            <nomcart>Bandida</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <carta idCart="54">
+            <nomcart>Mago de hielo</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <carta idCart="55">
+            <nomcart>Caballero</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="56">
+            <nomcart>Princesa</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <carta idCart="57">
+            <nomcart>Barbaros</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="58">
+            <nomcart>Reina arquera</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="59">
+            <nomcart>Fantasma real</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <clan>
+            <nomClan>Another Clan</nomClan>
+            <copesClan>48975</copesClan>
+            <tipusClan>public</tipusClan>
+        </clan>
+    </jugador>
+    <jugador id="6">
+        <nom>Pau</nom>
+        <copes>3223</copes>
+        <nivell>11</nivell>
+        <carta idCart="60">
+            <nomcart>Mago</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>rara</raresa>
+        </carta>
+        <carta idCart="61">
+            <nomcart>Mago electrico</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <carta idCart="62">
+            <nomcart>Mago de hielo</nomcart>
+            <nivellcart>11</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <carta idCart="4">
+            <nomcart>montapuercos</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="63">
+            <nomcart>Caballero</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="64">
+            <nomcart>valquiria</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <carta idCart="65">
+            <nomcart>Golem</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="66">
+            <nomcart>Peka</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="67">
+            <nomcart>Princesa</nomcart>
+            <nivellcart>10</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <carta idCart="68">
+            <nomcart>Mega caballero</nomcart>
+            <nivellcart>12</nivellcart>
+            <raresa>epica</raresa>
+        </carta>
+        <carta idCart="69">
+            <nomcart>Gigante noble</nomcart>
+            <nivellcart>13</nivellcart>
+            <raresa>comuna</raresa>
+        </carta>
+        <carta idCart="70">
+            <nomcart>Gigante</nomcart>
+            <nivellcart>8</nivellcart>
+            <raresa>llegendaria</raresa>
+        </carta>
+        <clan>
+            <nomClan>ananoit</nomClan>
+            <copesClan>35435</copesClan>
+            <tipusClan>public</tipusClan>
+        </clan>
+    </jugador>   
+</clash>

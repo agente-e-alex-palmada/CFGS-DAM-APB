@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" ?>
+<!-- Exemple invalid: 'valor': dificultat va entre 0 i 10 -->
+<receptes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="base.xsd">
+	<recepta dificultat="100">
+		<nom>Papates amb llet</nom>
+		<ingredients>
+			<ingredient>
+				<quantitat>
+					<valor>2</valor>
+					<mesura>grams</mesura>
+				</quantitat>
+				<nom>all</nom>
+			</ingredient>
+		</ingredients>
+		<passos>
+			<pas>Fregir patates</pas>
+		</passos>
+	</recepta>
+	<recepta dificultat="-1">
+		<nom>Papates amb llet2</nom>
+		<ingredients>
+			<ingredient>
+				<quantitat>
+					<valor>2</valor>
+					<mesura>grams</mesura>
+				</quantitat>
+				<nom>all</nom>
+			</ingredient>
+		</ingredients>
+		<passos>
+			<pas>Fregir patates</pas>
+		</passos>
+	</recepta>
+</receptes>

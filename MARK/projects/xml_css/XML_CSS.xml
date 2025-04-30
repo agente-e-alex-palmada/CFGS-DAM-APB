@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="XML_CSS.css"?>
+<professor>
+  <departament>Departament d'Informàtica</departament>
+  <nom>Robert</nom>
+  <cognom>Blanch</cognom>
+  <carrecs>
+    <carrec>Professor LMSGI</carrec>
+    <carrec>Webmaster</carrec>
+  </carrecs>
+</professor>
+

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<clash>
+  <version>1</version>
+  <players>
+    <player id="p1">
+      <name>Player One</name>
+      <trophies>1500</trophies>
+      <level>1</level>
+      <cards>
+        <card cardId="c1">
+          <cardName>Archer</cardName>
+          <cardLevel>5</cardLevel>
+          <rarity>common</rarity>
+        </card>
+        <card cardId="c2">
+          <cardName>Giant</cardName>
+          <cardLevel>4</cardLevel>
+          <rarity>rare</rarity>
+        </card>
+        <card cardId="c3">
+          <cardName>Fireball</cardName>
+          <cardLevel>6</cardLevel>
+          <rarity>epic</rarity>
+        </card>
+      </cards>
+    </player>
+    <player id="p2">
+      <name>Player Two</name>
+      <trophies>1800</trophies>
+      <level>1</level>
+      <cards>
+        <card cardId="c4">
+          <cardName>Minions</cardName>
+          <cardLevel>3</cardLevel>
+          <rarity>common</rarity>
+        </card>
+        <card cardId="c5">
+          <cardName>Balloon</cardName>
+          <cardLevel>5</cardLevel>
+          <rarity>epic</rarity>
+        </card>
+        <card cardId="c6">
+          <cardName>Hog Rider</cardName>
+          <cardLevel>7</cardLevel>
+          <rarity>rare</rarity>
+        </card>
+      </cards>
+    </player>
+    <player id="p3">
+      <name>Player Three</name>
+      <trophies>2100</trophies>
+      <level>1</level>
+      <cards>
+        <card cardId="c7">
+          <cardName>Wizard</cardName>
+          <cardLevel>6</cardLevel>
+          <rarity>epic</rarity>
+        </card>
+        <card cardId="c8">
+          <cardName>Valkyrie</cardName>
+          <cardLevel>4</cardLevel>
+          <rarity>rare</rarity>
+        </card>
+        <card cardId="c9">
+          <cardName>Golem</cardName>
+          <cardLevel>5</cardLevel>
+          <rarity>legendary</rarity>
+        </card>
+      </cards>
+    </player>
+    <player id="p4">
+      <name>Player Four</name>
+      <trophies>1600</trophies>
+      <level>1</level>
+      <cards>
+        <card cardId="c10">
+          <cardName>Baby Dragon</cardName>
+          <cardLevel>5</cardLevel>
+          <rarity>epic</rarity>
+        </card>
+        <card cardId="c11">
+          <cardName>Miner</cardName>
+          <cardLevel>4</cardLevel>
+          <rarity>legendary</rarity>
+        </card>
+        <card cardId="c12">
+          <cardName>Cannon</cardName>
+          <cardLevel>6</cardLevel>
+          <rarity>common</rarity>
+        </card>
+      </cards>
+    </player>
+    <player id="p5">
+      <name>Player Five</name>
+      <trophies>2200</trophies>
+      <level>1</level>
+      <cards>
+        <card cardId="c13">
+          <cardName>Ice Spirit</cardName>
+          <cardLevel>5</cardLevel>
+          <rarity>common</rarity>
+        </card>
+        <card cardId="c14">
+          <cardName>P.E.K.K.A</cardName>
+          <cardLevel>7</cardLevel>
+          <rarity>epic</rarity>
+        </card>
+        <card cardId="c15">
+          <cardName>Lightning</cardName>
+          <cardLevel>8</cardLevel>
+          <rarity>legendary</rarity>
+        </card>
+      </cards>
+    </player>
+  </players>
+</clash>

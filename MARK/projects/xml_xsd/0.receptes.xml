@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" ?>
+<!-- Exemple vàlid -->
+<receptes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="base.xsd">
+	<recepta dificultat="5">
+		<nom>Papates amb llet</nom>
+		<passos>
+			<pas>Fregir patates</pas>
+			<pas>Posar-hi la llet</pas>
+			<pas>deixar refredar</pas>
+		</passos>
+	</recepta>
+	<recepta dificultat="8">
+		<nom>beixamel</nom>
+		<passos>
+			<pas>remenar tot</pas>
+			<pas>posar a la paella</pas>
+		</passos>
+	</recepta>
+</receptes>
